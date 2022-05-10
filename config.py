@@ -1,8 +1,8 @@
 import os
 
 class Config:
-    SECRET_KEY='$V5F;;:8&Y7hdmnTve}Vx;)NKxmgpC'
-    SQLALCHEMY_DATABASE_URI = 'postgresql://eayqbjrfoytgud:66cf71c74cce1297c26bf44bab6eb1f91d812be9fb23b98f54eeb39e2f78a7df@ec2-3-231-82-226.compute-1.amazonaws.com:5432/d8kju1nsufb22n'
+    SECRET_KEY='5678'
+    
     
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     
@@ -30,7 +30,7 @@ class ProdConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    pass
+    SQLALCHEMY_DATABASE_URI=os.environ.get('DATABASE_URL').replace ('://', 'ql://', 1)  
 
 
 class TestConfig(Config):
@@ -38,7 +38,7 @@ class TestConfig(Config):
 
 class DevConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'postgresql://eayqbjrfoytgud:66cf71c74cce1297c26bf44bab6eb1f91d812be9fb23b98f54eeb39e2f78a7df@ec2-3-231-82-226.compute-1.amazonaws.com:5432/d8kju1nsufb22n'
-    DEBUG = True
+    # DEBUG = True
 
 config_options = {
 'development':DevConfig,
