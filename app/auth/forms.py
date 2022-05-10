@@ -7,9 +7,9 @@ from ..models import User
 class RegistrationForm(FlaskForm):
     email = StringField('enter your email address')
     author = StringField('Enter your name')
-    password = StringField('Enter your password', validators=[DataRequired(),EqualTo('password_confirm',message='password must match')])
+    password = PasswordField('Enter your password', validators=[DataRequired(),EqualTo('password_confirm',message='password must match')])
     password_confirm = PasswordField('Confirm passwords', validators=[DataRequired()])
-    submit = StringField('Sing up')
+    submit = SubmitField("Sign up")
     
     def validate_email(self,data_field):
         if User.query.filter_by(email=data_field.data).first():
