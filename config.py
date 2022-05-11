@@ -1,7 +1,7 @@
 import os
 
 class Config:
-    SECRET_KEY='5678'
+    SECRET_KEY='7905'
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:enter@localhost/visual'
     UPLOADED_PHOTOS_DEST ='app/static/photos'
     
