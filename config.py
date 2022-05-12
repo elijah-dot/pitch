@@ -30,18 +30,16 @@ class ProdConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:rud@localhost/work'
+    # SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:rud@localhost/work'
     # uri = os.getenv('DATABASE_URL')
     # if uri and uri.startswith('postgres://'):
     #     uri = uri.replace('postgres://', 'postgresql://', 1)
         
-    #     SQLALCHEMY_DATABASE_URI=uri 
+    # SQLALCHEMY_DATABASE_URI=uri 
 
 
 class TestConfig(Config):
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:rud@localhost/work'
-    # SQLALCHEMY_DATABASE_URI = 'postgresql://eayqbjrfoytgud:66cf71c74cce1297c26bf44bab6eb1f91d812be9fb23b98f54eeb39e2f78a7df@ec2-3-231-82-226.compute-1.amazonaws.com:5432/d8kju1nsufb22n'
-
+    pass
 class DevConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:rud@localhost/work'
     # DEBUG = True
