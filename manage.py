@@ -4,7 +4,8 @@ from  flask_migrate import Migrate, MigrateCommand
 from app.models import User, Pitches, Comments
 
 
-app = create_app('production')
+# app = create_app('production')
+app = create_app('development')
 
 
 
@@ -27,4 +28,4 @@ migrate = Migrate(app,db)
 manager.add_command('db',MigrateCommand)
 
 if __name__ == '__main__':
-    app.run()
+    app.run(host='0.0.0.0',port=3050)

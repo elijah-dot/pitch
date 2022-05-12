@@ -2,4 +2,5 @@
 export MAIL_USERNAME='elijahwangu91@gmail.com'
 export MAIL_PASSWORD='Elijah2000!'
 SECRET_KEY='7905'
+
 python3 manage.py server
